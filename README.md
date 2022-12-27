@@ -1,4 +1,4 @@
-# lgs_jr_v2
+# LGS_JR_v2
 
 A new Flutter project.
 
