@@ -67,6 +67,10 @@ class _HesapOlusturState extends State<HesapOlustur> {
                     width: double.infinity,
                     height: 350,
                     decoration: BoxDecoration(
+                      border: Border.all(
+                        width: 4.0,
+                        color: Colors.lightGreenAccent
+                      ),
                         color: Colors.white.withOpacity(0.5),
                         borderRadius: BorderRadius.circular(20)),
                     child: SingleChildScrollView(
@@ -74,7 +78,7 @@ class _HesapOlusturState extends State<HesapOlustur> {
                         children: [
                           TextFormField(
                             decoration: InputDecoration(
-                              hintText: "Kullanmak istediğiniz Kullanıcı adını giriniz.",
+                              hintText: "Kullanmak istediğiniz Kullanıcı Adını giriniz.",
                               prefixIcon: Icon(Icons.person),
                             ),
                             validator: (GirilenDeger) {
@@ -121,7 +125,7 @@ class _HesapOlusturState extends State<HesapOlustur> {
                             },
                             onSaved: (GirilenDeger) => sifre = GirilenDeger,
                           ),
-                          SizedBox(height: 30),
+                          SizedBox(height: 20),
                           ElevatedButton(
                               style: ElevatedButton.styleFrom(
                                   side: BorderSide(
