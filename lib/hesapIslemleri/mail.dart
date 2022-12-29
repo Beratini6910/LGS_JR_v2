@@ -100,7 +100,7 @@ class _MailState extends State<Mail> {
                             ),
                             onPressed: _girisYap,
                             child: const Text(
-                              "Mail İle Giriş Yap",
+                              "Giriş Yap",
                               style: TextStyle(
                                   fontSize: 20,
                                   fontWeight: FontWeight.normal,

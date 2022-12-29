@@ -129,6 +129,10 @@ class _Ozel_Sinav_GirisiState extends State<Ozel_Sinav_Girisi> {
                       //margin: const EdgeInsets.only(left: 5, right: 5),
                       width: double.infinity,
                       decoration: BoxDecoration(
+                        border: Border.all(
+                          width: 4.0,
+                          color: Colors.blueAccent
+                        ),
                           borderRadius: BorderRadius.circular(10),
                           color: Colors.blue.withOpacity(0.5)
                       ),

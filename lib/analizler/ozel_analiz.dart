@@ -90,6 +90,22 @@ class _Ozel_BitirState extends State<Ozel_Bitir> {
       'Süreniz' : zaman,
     }).whenComplete(() => print("Firestore'a eklenildi."));
 
+    FirebaseFirestore.instance.collection("Sinavlar").doc(sinavAdi1).collection("Sonuclar").doc(kullaniciAdi).set({
+      'Dogru Sayısı' : dogru,
+      'Yanlış Sayısı' : yanlis,
+      'Ders' : ders,
+      'Net' : net,
+      'Süre' : zaman,
+    }).whenComplete(() => print("Firestore'a eklenildi."));
+
+    for(int z = 0; z <= sayi-1; z++){
+      FirebaseFirestore.instance.collection("Sinavlar").doc(sinavAdi1).collection("Sonuclar").doc(kullaniciAdi).update({
+
+        (z+1).toString()+"_Soru" : data![z+10].toString(),
+
+      }).whenComplete(() => print("Firestore'a eklenildi."));
+    }
+
     if (ders == "Türkçe") {
       trOrt = 5;
     }
