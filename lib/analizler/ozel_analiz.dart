@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 //import 'package:lgs_jr_v2/analizler/genelgrafik.dart';
@@ -88,22 +90,26 @@ class _Ozel_BitirState extends State<Ozel_Bitir> {
       'Dersiniz' : ders,
       'Netiniz' : net,
       'Süreniz' : zaman,
-    }).whenComplete(() => print("Firestore'a eklenildi."));
+    });
 
     FirebaseFirestore.instance.collection("Sinavlar").doc(sinavAdi1).collection("Sonuclar").doc(kullaniciAdi).set({
+      'Kullanici' : kullaniciAdi,
       'Dogru Sayısı' : dogru,
       'Yanlış Sayısı' : yanlis,
       'Ders' : ders,
       'Net' : net,
       'Süre' : zaman,
-    }).whenComplete(() => print("Firestore'a eklenildi."));
+    });
 
     for(int z = 0; z <= sayi-1; z++){
-      FirebaseFirestore.instance.collection("Sinavlar").doc(sinavAdi1).collection("Sonuclar").doc(kullaniciAdi).update({
+      Timer(Duration(milliseconds: 500), (){
+        FirebaseFirestore.instance.collection("Sinavlar").doc(sinavAdi1).collection("Sonuclar").doc(kullaniciAdi).update({
 
-        (z+1).toString()+"_Soru" : data![z+10].toString(),
+          (z+1).toString()+"_Soru" : data![z+10].toString(),
 
-      }).whenComplete(() => print("Firestore'a eklenildi."));
+        });
+      });
+
     }
 
     if (ders == "Türkçe") {

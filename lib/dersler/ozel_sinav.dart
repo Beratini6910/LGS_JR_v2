@@ -75,8 +75,6 @@ class _Ozel_SinavState extends State<Ozel_Sinav> with TickerProviderStateMixin{
   @override
   void initState() {
 
-
-
     sinavAdi1 = globals.sinavismi;
 
     FirebaseFirestore.instance.collection("Sinavlar")

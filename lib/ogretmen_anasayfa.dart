@@ -7,6 +7,7 @@ import 'package:lgs_jr_v2/dersler/sosyalsorular.dart';
 import 'package:lgs_jr_v2/dersler/turkcesorular.dart';
 import 'package:lgs_jr_v2/dersler/sinav_olustur.dart';
 import 'package:lgs_jr_v2/main.dart';
+import 'package:lgs_jr_v2/ozel_sinav_sonuclar.dart';
 import 'package:page_transition/page_transition.dart';
 import 'hesapIslemleri/hesap_olustur.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -285,6 +286,33 @@ class _Ogretmen_AnasayfaState extends State<Ogretmen_Anasayfa> {
                                     )));
                               },
                               child: const Text("Özel Sınav Oluştur",
+                                style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.white
+                                ),),
+
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 8,left: 8, right: 8),
+                            child: ElevatedButton(
+                              style: ButtonStyle(
+                                //fixedSize: MaterialStateProperty.all(Size(double.infinity, double.infinity)),
+                                backgroundColor: MaterialStateProperty.all(Colors.green),
+                              ),
+                              onPressed: () {
+                                Navigator.push(context,PageTransition(type: PageTransitionType.fade,
+                                    child: Ozel_Sinav_Sonuclar(),
+                                    duration: const Duration(milliseconds: 1000),
+                                    reverseDuration: const Duration(milliseconds: 600),
+                                    settings: RouteSettings
+                                      (
+                                      arguments: data,
+                                    )));
+                              },
+                              child: const Text("Özel Sınavlarınızın Sonuclarını İnceleyin ",
+                                textAlign: TextAlign.center,
                                 style: TextStyle(
                                     fontSize: 20,
                                     fontWeight: FontWeight.bold,
